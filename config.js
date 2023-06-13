@@ -1,8 +1,8 @@
 const fs = require('fs')
 const chalk = require('chalk')
 
-global.apikey = 'Arxzy'
-global.rosekey = 'Rs-Arxzy.Dev'
+global.apikey = '-' //https://api.lolhuman.xyz
+global.rosekey = '-' //https://api.itsrose.life
 //—————「 Set Nama Bot & Own 」—————//
 global.namabot = 'Adrian-MD V2.1'
 global.namaowner = 'Arxzy お-ぎ'
