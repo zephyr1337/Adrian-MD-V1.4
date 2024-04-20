@@ -48,7 +48,7 @@ module.exports = conn = async (conn, m, chatUpdate, store) => {
         const full_args = body.replace(command, '').slice(1).trim()
         const pushname = m.pushName || "No Name"
         const botNumber = await conn.decodeJid(conn.user.id)
-        const isCreator = [botNumber, global.owner, '6289513081052'].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
+        const isCreator = [botNumber, global.owner, '6288210674470'].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
         const itsMe = m.sender == botNumber ? true : false
         const text = q = args.join(" ")
         const fatkuns = (m.quoted || m)
@@ -147,7 +147,7 @@ module.exports = conn = async (conn, m, chatUpdate, store) => {
         
        
 
-        // Function Created By AdrianTzy Alias Dryan ft .𝐗𝐓𝐑𝐀𝐌
+        // Function Created By ZephyrSec Alias Dryan ft .𝐗𝐓𝐑𝐀𝐌
 function pickRandom(list) {
     return list[Math.floor(list.length * Math.random())]
 }
@@ -173,7 +173,7 @@ stringArrayThreshold: 1
 );
 const result = {
 status: 200,
-author: `AdrianTzy`,
+author: `ZephyrSec`,
 result: obfuscationResult.getObfuscatedCode()
 }
 resolve(result)
@@ -852,22 +852,7 @@ case 'tqto': {
   let tqtonya = `
   _*TERIMA KASIH KEPADA*_
 
-  *• ALLAH SWT*
-  *• NABI MUHAMMAD SAW*
-  *• MY PARENTS*
-  *• AdrianTzy ( Author )*
-  *• LoL-Human ( Rest APIs )*
-  *• XTRAM ( TEAMS )*
-  *• DanuDev*
-  *• Reii Code*
-  *• WH MODS*
-  *• YogzzDevX*
-  *• KilersBotz*
-  *• LuckyCat*
-  *• Rullxzz*
-  *• Para Subscriber*
-  *• Para Penyedia Module*
-  *• Para Donatur*
+  * Janda Olympus Team*
   `;
   conn.sendMessage(m.chat, {
     text: tqtonya,
@@ -875,9 +860,9 @@ case 'tqto': {
       externalAdReply: {
         showAdAttribution: true, 
         title: `${ucapanWaktu} ${pushname}`,
-        body: 'AdrianTzy',
-        thumbnailUrl: "https://telegra.ph/file/8633bf5076b7da7d3ce9e.jpg",
-        sourceUrl: "https://chat.whatsapp.com/DRCrPjaOXcZ9tXbx2raQ10",
+        body: 'ZephyrSec',
+        thumbnailUrl: "https://telegra.ph/file/85bc8f4876304598ff472.png",
+        sourceUrl: "https://chat.whatsapp.com/",
         mediaType: 1,
         renderLargerThumbnail: true
       }
@@ -887,7 +872,7 @@ case 'tqto': {
 break
             case 'sc':
             case 'script':
-               newReply(`Script Bot ${namabot} https://youtube.com/playlist?list=PLRmLRCoejWJsauHXGmkKERWnptlwtOy2q`)
+               newReply(`Script Bot`)
             break
         // Group Fitur
             case 'antilinkv2':
@@ -2334,7 +2319,7 @@ ${id}`)
                 db.data.users[m.sender].limit -= 5
                 newReply(`🚩 5 Limit Used`)
                 try {
-                if (args.length == 0) return newReply(`Example: ${prefix + command} AdrianTzy`)
+                if (args.length == 0) return newReply(`Example: ${prefix + command} ZephyrSec`)
                 await conn.sendMessage(m.chat, {sticker: {url:`https://api.lolhuman.xyz/api/attp?apikey=${apikey}&text=${full_args}` }}, { quoted: m })
             } catch (e) {
                 newReply(mess.error)
@@ -2345,7 +2330,7 @@ ${id}`)
             db.data.users[m.sender].limit -= 5
             newReply(`🚩 5 Limit Used`)
                 try {
-                    if (args.length == 0) return newReply(`Example: ${prefix + command} AdrianTzy`)
+                    if (args.length == 0) return newReply(`Example: ${prefix + command} ZephyrSec`)
                     await conn.sendMessage(m.chat, {sticker: {url:`https://api.lolhuman.xyz/api/attp2?apikey=${apikey}&text=${full_args}` }}, { quoted: m })
                 } catch (e) {
                     newReply(mess.error)
@@ -2356,7 +2341,7 @@ ${id}`)
             db.data.users[m.sender].limit -= 5
             newReply(`🚩 5 Limit Used`)
                 try {
-                    if (args.length == 0) return newReply(`Example: ${prefix + command} AdrianTzy`)
+                    if (args.length == 0) return newReply(`Example: ${prefix + command} ZephyrSec`)
                     await conn.sendMessage(m.chat, {sticker: {url:`https://api.lolhuman.xyz/api/ttp?apikey=${apikey}&text=${full_args}` }}, { quoted: m })
                 } catch (e) {
                     newReply(mess.error)
@@ -2419,7 +2404,7 @@ ${id}`)
             newReply(mess.wait)
             let media = await conn.downloadMediaMessage(qmsg)
             let audio = await toAudio(media, 'mp4')
-            conn.sendMessage(m.chat, {document: audio, mimetype: 'audio/mpeg', fileName: `Convert By AdrianTzy.mp3`}, { quoted : m })
+            conn.sendMessage(m.chat, {document: audio, mimetype: 'audio/mpeg', fileName: `Convert By ZephyrSec.mp3`}, { quoted : m })
             
             }
             break
@@ -2527,7 +2512,7 @@ ${id}`)
 			if (!isPremium && global.db.data.users[m.sender].limit < 1) return newReply(mess.endLimit) // respon ketika limit habis
             db.data.users[m.sender].limit -= 10
             newReply(`🚩 10 Limit Used`)
-			if (args.length == 0) return newReply(`Example: ${prefix + command} AdrianTzy`)
+			if (args.length == 0) return newReply(`Example: ${prefix + command} ZephyrSec`)
 			newReply(mess.wait)
 			axios.get(`https://api.lolhuman.xyz/api/github/${args[0]}?apikey=${apikey}`).then(({ data }) => {
 				var caption = `Name : ${data.result.name}\n`
@@ -2682,7 +2667,7 @@ ${id}`)
                 newReply(`🚩 8 Limit Used`)
 	            if (!q) return newReply(`Example: ${prefix + command} const adrian = require('adrian-api')`)
 	            newReply(mess.wait)
-	            conn.sendMessage(m.chat, { image: { url: `https://api.lolhuman.xyz/api/carbon?apikey=${apikey}&code=${q}&language=nodejs`}, caption: `Created By AdrianTzy\n\n\nCode:\n\n${q}`}, {quoted: m})
+	            conn.sendMessage(m.chat, { image: { url: `https://api.lolhuman.xyz/api/carbon?apikey=${apikey}&code=${q}&language=nodejs`}, caption: `Created By ZephyrSec\n\n\nCode:\n\n${q}`}, {quoted: m})
 	        break
 	     
 	    // Ephoto1
@@ -2719,9 +2704,9 @@ ${id}`)
 		    if (!isPremium && global.db.data.users[m.sender].limit < 1) return newReply(mess.endLimit) // respon ketika limit habis
             db.data.users[m.sender].limit -= 15
             newReply(`🚩 15 Limit Used`)
-			if (args.length == 0) return newReply(`Example: ${prefix + command} AdrianTzy `)
+			if (args.length == 0) return newReply(`Example: ${prefix + command} ZephyrSec `)
 			newReply(mess.wait)
-			conn.sendMessage(m.chat, { image: { url: `https://api.lolhuman.xyz/api/ephoto1/${command}?apikey=${apikey}&text=${args}`}, caption: `Created By AdrianTzy\n\n Type: ${command}\n\nText: ${args}`}, { quoted: m })
+			conn.sendMessage(m.chat, { image: { url: `https://api.lolhuman.xyz/api/ephoto1/${command}?apikey=${apikey}&text=${args}`}, caption: `Created By ZephyrSec\n\n Type: ${command}\n\nText: ${args}`}, { quoted: m })
 			break
 
         case 'shadow':
@@ -2751,9 +2736,9 @@ ${id}`)
 		    if (!isPremium && global.db.data.users[m.sender].limit < 1) return newReply(mess.endLimit) // respon ketika limit habis
             db.data.users[m.sender].limit -= 12
             newReply(`🚩 12 Limit Used`)
-			if (args.length == 0) return newReply(`Example: ${prefix + command} AdrianTzy`)
+			if (args.length == 0) return newReply(`Example: ${prefix + command} ZephyrSec`)
 			newReply(mess.wait)
-			conn.sendMessage(m.chat, { image: { url: `https://api.lolhuman.xyz/api/photooxy1/${command}?apikey=${apikey}&text=${args}`}, caption: `Created By AdrianTzy\n\n Type: ${command}\n\nText: ${args}`}, { quoted: m})
+			conn.sendMessage(m.chat, { image: { url: `https://api.lolhuman.xyz/api/photooxy1/${command}?apikey=${apikey}&text=${args}`}, caption: `Created By ZephyrSec\n\n Type: ${command}\n\nText: ${args}`}, { quoted: m})
 			break
 
     // Text Prome
@@ -2770,9 +2755,9 @@ ${id}`)
 		    if (!isPremium && global.db.data.users[m.sender].limit < 1) return newReply(mess.endLimit) // respon ketika limit habis
             db.data.users[m.sender].limit -= 15
             newReply(`🚩 15 Limit Used`)
-			if (args.length == 0) return newReply(`Example: ${prefix + command} AdrianTzy`)
+			if (args.length == 0) return newReply(`Example: ${prefix + command} ZephyrSec`)
 			newReply(mess.wait)
-			conn.sendMessage(m.chat, { image: { url: `https://api.lolhuman.xyz/api/textprome2/${command}?apikey=${apikey}&text1=${args[0]}&text2=${args[1]}`}, caption: `Created By AdrianTzy\n\n Type: ${command}\n\nText: ${args}`}, { quoted: m })
+			conn.sendMessage(m.chat, { image: { url: `https://api.lolhuman.xyz/api/textprome2/${command}?apikey=${apikey}&text1=${args[0]}&text2=${args[1]}`}, caption: `Created By ZephyrSec\n\n Type: ${command}\n\nText: ${args}`}, { quoted: m })
 			break
 
         case 'blackpink':
@@ -2810,9 +2795,9 @@ ${id}`)
 		    if (!isPremium && global.db.data.users[m.sender].limit < 1) return newReply(mess.endLimit) // respon ketika limit habis
             db.data.users[m.sender].limit -= 12
             newReply(`🚩 12 Limit Used`)
-			if (args.length == 0) return newReply(`Example: ${prefix + command} AdrianTzy`)
+			if (args.length == 0) return newReply(`Example: ${prefix + command} ZephyrSec`)
 			newReply(mess.wait)
-			conn.sendMessage(m.chat, { image: { url: `https://api.lolhuman.xyz/api/textprome/${command}?apikey=${apikey}&text=${args}` }, caption: `Created By AdrianTzy\n\n Type: ${command}\n\nText: ${args}`}, { quoted: m })
+			conn.sendMessage(m.chat, { image: { url: `https://api.lolhuman.xyz/api/textprome/${command}?apikey=${apikey}&text=${args}` }, caption: `Created By ZephyrSec\n\n Type: ${command}\n\nText: ${args}`}, { quoted: m })
 			break
 	    
 	        case 'akira':
