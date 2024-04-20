@@ -70,13 +70,13 @@ async function startAdrian() {
     const conn = connConnect({
         logger: pino({ level: 'silent' }),
         printQRInTerminal: true,
-        browser: ['Adrian Multi Device','Safari','1.0.0'],
+        browser: ['ZephyrSec Multi Device','Safari','1.0.0'],
         patchMessageBeforeSending: (message) => {
 
                 const requiresPatch = !!(
                   message.buttonsMessage
-              	  || message.templateMessage
-              		|| message.listMessage
+                  || message.templateMessage
+                    || message.listMessage
                 );
                 if (requiresPatch) {
                     message = {
@@ -118,7 +118,7 @@ async function startAdrian() {
         if (mek.key && mek.key.remoteJid === 'status@broadcast') return
         if (!conn.public && !mek.key.fromMe && chatUpdate.type === 'notify') return
         if (mek.key.id.startsWith('BAE5') && mek.key.id.length === 16) return
-        if (mek.key.id.startsWith('FatihArridho_')) return
+        if (mek.key.id.startsWith('ZephyrSec')) return
         m = smsg(conn, mek, store)
         require("./adrian")(conn, m, chatUpdate, store)
         } catch (err) {
@@ -126,94 +126,94 @@ async function startAdrian() {
         }
     })
     
-	// detect group update
-	conn.ev.on("groups.update", async (json) => {
-			console.log(json)
-			const res = json[0];
-			    try {
+    // detect group update
+    conn.ev.on("groups.update", async (json) => {
+            console.log(json)
+            const res = json[0];
+                try {
                     ppgroup = await conn.profilePictureUrl(anu.id, 'image')
                 } catch {
-                    ppgroup = 'https://tinyurl.com/yx93l6da'
+                    ppgroup = 'https://tinyurl.com/'
                 }
-			if (res.announce == true) {
-				await sleep(2000)
-				let a = `「 Group Settings Change 」\n\nGroup has been closed by admin, Now only admin can send messages !`
-				conn.sendMessage(res.id, {
+            if (res.announce == true) {
+                await sleep(2000)
+                let a = `「 Group Settings Change 」\n\nGroup has been closed by admin, Now only admin can send messages !`
+                conn.sendMessage(res.id, {
                     text: a, 
                     contextInfo: {
                         externalAdReply: {
                             title: `${namabot}`,
                             body: `${namaowner}`,
                             thumbnailUrl: ppgroup,
-                            sourceUrl: "https://instagram/@dryan.pu",
+                            sourceUrl: "https://instagram/ZephyrSec",
                             mediaType: 1,
                             renderLargerThumbnail: true
                         }
                     }
                 }
             );
-			} else if (res.announce == false) {
-				await sleep(2000)
-				let a = `「 Group Settings Change 」\n\nGroup has been opened by admin, Now participants can send messages !`
-				conn.sendMessage(res.id, {
+            } else if (res.announce == false) {
+                await sleep(2000)
+                let a = `「 Group Settings Change 」\n\nGroup has been opened by admin, Now participants can send messages !`
+                conn.sendMessage(res.id, {
                     text: a, 
                     contextInfo: {
                         externalAdReply: {
                             title: `${namabot}`,
                             body: `${namaowner}`,
                             thumbnailUrl: ppgroup,
-                            sourceUrl: "https://instagram/@dryan.pu",
+                            sourceUrl: "https://instagram/ZephyrSec",
                             mediaType: 1,
                             renderLargerThumbnail: true
                         }
                     }
                 }
             );
-			} else if (res.restrict == true) {
-				await sleep(2000)
-				let a = `「 Group Settings Change 」\n\nGroup info has been restricted, Now only admin can edit group info !`
-				conn.sendMessage(res.id, {
+            } else if (res.restrict == true) {
+                await sleep(2000)
+                let a = `「 Group Settings Change 」\n\nGroup info has been restricted, Now only admin can edit group info !`
+                conn.sendMessage(res.id, {
                     text: a, 
                     contextInfo: {
                         externalAdReply: {
                             title: `${namabot}`,
                             body: `${namaowner}`,
                             thumbnailUrl: ppgroup,
-                            sourceUrl: "https://instagram/@dryan.pu",
+                            sourceUrl: "https://instagram/ZephyrSec",
                             mediaType: 1,
                             renderLargerThumbnail: true
                         }
                     }
                 }
             );
-			} else if (res.restrict == false) {
-				await sleep(2000)
-				let anu = `「Group Settings Change 」\n\nGroup info has been opened, Now participant can edit group info !`
-				conn.sendMessage(res.id, {
+            } else if (res.restrict == false) {
+                await sleep(2000)
+                let anu = `「Group Settings Change 」\n\nGroup info has been opened, Now participant can edit group info !`
+                conn.sendMessage(res.id, {
                     text: a, 
                     contextInfo: {
                         externalAdReply: {
                             title: `${namabot}`,
                             body: `${namaowner}`,
                             thumbnailUrl: ppgroup,
-                            sourceUrl: "https://instagram/@dryan.pu",
+                            sourceUrl: "https://instagram/ZephyrSec",
                             mediaType: 1,
                             renderLargerThumbnail: true
                         }
                     }
                 }
             );
-			} else if(!res.desc == ''){
-				await sleep(2000)
-				let a = `「Group Settings Change 」\n\n*Group desk has been changed to*\n\n${res.desc}`
-				conn.sendMessage(res.id, {
+            } else if(!res.desc == ''){
+                await sleep(2000)
+                let a = `「Group Settings Change 」\n\n*Group desk has been changed to*\n\n${res.desc}`
+                conn.sendMessage(res.id, {
                     text: a, 
                     contextInfo: {
                         externalAdReply: {
                             title: `${namabot}`,
                             body: `${namaowner}`,
                             thumbnailUrl: ppgroup,
-                            sourceUrl: "https://instagram/@dryan.pu",
+                            sourceUrl: "https://instagram/ZephyrSec",
                             mediaType: 1,
                             renderLargerThumbnail: true
                         }
@@ -221,24 +221,24 @@ async function startAdrian() {
                 }
             );
             } else {
-				await sleep(2000)
-				let a = `「Group Settings Change 」\n\n*Group Subject has been changed to*\n\n*${res.subject}*`
-				conn.sendMessage(res.id, {
+                await sleep(2000)
+                let a = `「Group Settings Change 」\n\n*Group Subject has been changed to*\n\n*${res.subject}*`
+                conn.sendMessage(res.id, {
                     text: a, 
                     contextInfo: {
                         externalAdReply: {
                             title: `${namabot}`,
                             body: `${namaowner}`,
                             thumbnailUrl: ppgroup,
-                            sourceUrl: "https://instagram/@dryan.pu",
+                            sourceUrl: "https://instagram/ZephyrSec",
                             mediaType: 1,
                             renderLargerThumbnail: true
                         }
                     }
                 });
-			}
+            }
         });
-	 
+     
         conn.ev.on('group-participants.update', async (anu) => {
         console.log(anu)
         try {
@@ -267,7 +267,7 @@ async function startAdrian() {
          title: `${namabot}`,
          body: `${namaowner}`,
          thumbnailUrl: ppuser,
-         sourceUrl: "https://instagram/@dryan.pu",
+         sourceUrl: "https://instagram/ZephyrSec",
          mediaType: 1,
          renderLargerThumbnail: true
     }}})
@@ -280,7 +280,7 @@ async function startAdrian() {
          title: `${namabot}`,
          body: `${namaowner}`,
          thumbnailUrl: ppuser,
-         sourceUrl: "https://instagram/@dryan.pu",
+         sourceUrl: "https://instagram/ZephyrSec",
          mediaType: 1,
          renderLargerThumbnail: true
     }}})
@@ -293,7 +293,7 @@ async function startAdrian() {
          title: `${namabot}`,
          body: `${namaowner}`,
          thumbnailUrl: ppuser,
-         sourceUrl: "https://instagram/@dryan.pu",
+         sourceUrl: "https://instagram/ZephyrSec",
          mediaType: 1,
          renderLargerThumbnail: true
     }}})
@@ -306,7 +306,7 @@ async function startAdrian() {
          title: `${namabot}`,
          body: `${namaowner}`,
          thumbnailUrl: ppuser,
-         sourceUrl: "https://instagram/@dryan.pu",
+         sourceUrl: "https://instagram/ZephyrSec",
          mediaType: 1,
          renderLargerThumbnail: true
     }}})
@@ -316,7 +316,7 @@ async function startAdrian() {
             console.log("Eror Di Bagian Welcome Group "+err)
         }
     })
-	
+    
     // Setting
     conn.decodeJid = (jid) => {
         if (!jid) return jid
@@ -352,14 +352,14 @@ async function startAdrian() {
     }
     
     conn.sendContact = async (jid, kon, quoted = '', opts = {}) => {
-	let list = []
-	for (let i of kon) {
-	    list.push({
-	    	displayName: await conn.getName(i + '@s.whatsapp.net'),
-	    	vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${namaowner}\nFN:${namaowner}\nitem1.TEL;waid=${i}:${i}\nitem1.X-ABLabel:Ponsel\nitem2.EMAIL;type=INTERNET:azzygota24@gmail.com\nitem2.X-ABLabel:Email\nitem3.URL:https://panel.apolozea.xyz\nitem3.X-ABLabel:Panel\nitem4.ADR:;;Indonesia;;;;\nitem4.X-ABLabel:Region\nEND:VCARD`
-	    })
-	}
-	conn.sendMessage(jid, { contacts: { displayName: `${list.length} Kontak`, contacts: list }, ...opts }, { quoted })
+    let list = []
+    for (let i of kon) {
+        list.push({
+            displayName: await conn.getName(i + '@s.whatsapp.net'),
+            vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${namaowner}\nFN:${namaowner}\nitem1.TEL;waid=${i}:${i}\nitem1.X-ABLabel:Ponsel\nitem2.EMAIL;type=INTERNET:azzygota24@gmail.com\nitem2.X-ABLabel:Email\nitem3.URL:https://panel.apolozea.xyz\nitem3.X-ABLabel:Panel\nitem4.ADR:;;Indonesia;;;;\nitem4.X-ABLabel:Region\nEND:VCARD`
+        })
+    }
+    conn.sendMessage(jid, { contacts: { displayName: `${list.length} Kontak`, contacts: list }, ...opts }, { quoted })
     }
     
     conn.public = true
@@ -367,49 +367,49 @@ async function startAdrian() {
     conn.serializeM = (m) => smsg(conn, m, store)
 
     conn.ev.on('connection.update', async (update) => {
-	const {
-		connection,
-		lastDisconnect
-	} = update
+    const {
+        connection,
+        lastDisconnect
+    } = update
 try{
-		if (connection === 'close') {
-			let reason = new Boom(lastDisconnect?.error)?.output.statusCode
-			if (reason === DisconnectReason.badSession) {
-				console.log(`Bad Session File, Please Delete Session and Scan Again`);
-				startAdrian()
-			} else if (reason === DisconnectReason.connectionClosed) {
-				console.log("Connection closed, reconnecting....");
-				startAdrian();
-			} else if (reason === DisconnectReason.connectionLost) {
-				console.log("Connection Lost from Server, reconnecting...");
-				startAdrian();
-			} else if (reason === DisconnectReason.connectionReplaced) {
-				console.log("Connection Replaced, Another New Session Opened, Please Close Current Session First");
-				startAdrian()
-			} else if (reason === DisconnectReason.loggedOut) {
-				console.log(`Device Logged Out, Please Scan Again And Run.`);
-				startAdrian();
-			} else if (reason === DisconnectReason.restartRequired) {
-				console.log("Restart Required, Restarting...");
-				startAdrian();
-			} else if (reason === DisconnectReason.timedOut) {
-				console.log("Connection TimedOut, Reconnecting...");
-				startAdrian();
-			} else conn.end(`Unknown DisconnectReason: ${reason}|${connection}`)
-		}
-		if (update.connection == "connecting" || update.receivedPendingNotifications == "false") {
-			lolcatjs.fromString(`[Sedang mengkoneksikan]`)
-		}
-		if (update.connection == "open" || update.receivedPendingNotifications == "true") {
-			lolcatjs.fromString(`[Connecting to] WhatsApp web`)
-			lolcatjs.fromString(`[Connected] ` + JSON.stringify(conn.user, null, 2))
-		}
-	
+        if (connection === 'close') {
+            let reason = new Boom(lastDisconnect?.error)?.output.statusCode
+            if (reason === DisconnectReason.badSession) {
+                console.log(`Bad Session File, Please Delete Session and Scan Again`);
+                startAdrian()
+            } else if (reason === DisconnectReason.connectionClosed) {
+                console.log("Connection closed, reconnecting....");
+                startAdrian();
+            } else if (reason === DisconnectReason.connectionLost) {
+                console.log("Connection Lost from Server, reconnecting...");
+                startAdrian();
+            } else if (reason === DisconnectReason.connectionReplaced) {
+                console.log("Connection Replaced, Another New Session Opened, Please Close Current Session First");
+                startAdrian()
+            } else if (reason === DisconnectReason.loggedOut) {
+                console.log(`Device Logged Out, Please Scan Again And Run.`);
+                startAdrian();
+            } else if (reason === DisconnectReason.restartRequired) {
+                console.log("Restart Required, Restarting...");
+                startAdrian();
+            } else if (reason === DisconnectReason.timedOut) {
+                console.log("Connection TimedOut, Reconnecting...");
+                startAdrian();
+            } else conn.end(`Unknown DisconnectReason: ${reason}|${connection}`)
+        }
+        if (update.connection == "connecting" || update.receivedPendingNotifications == "false") {
+            lolcatjs.fromString(`[Sedang mengkoneksikan]`)
+        }
+        if (update.connection == "open" || update.receivedPendingNotifications == "true") {
+            lolcatjs.fromString(`[Connecting to] WhatsApp web`)
+            lolcatjs.fromString(`[Connected] ` + JSON.stringify(conn.user, null, 2))
+        }
+    
 } catch (err) {
-	  console.log('Error Di Connection.update '+err)
-	  startAdrian();
-	}
-	
+      console.log('Error Di Connection.update '+err)
+      startAdrian();
+    }
+    
 })
 
     conn.ev.on('creds.update', saveCreds)
@@ -586,7 +586,7 @@ try{
      * @returns 
      */
     conn.sendImage = async (jid, path, caption = '', quoted = '', options) => {
-	let buffer = Buffer.isBuffer(path) ? path : /^data:.*?\/.*?;base64,/i.test(path) ? Buffer.from(path.split`,`[1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0)
+    let buffer = Buffer.isBuffer(path) ? path : /^data:.*?\/.*?;base64,/i.test(path) ? Buffer.from(path.split`,`[1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0)
         return await conn.sendMessage(jid, { image: buffer, caption: caption, ...options }, { quoted })
     }
 
@@ -669,7 +669,7 @@ try{
         await conn.sendMessage(jid, { sticker: { url: buffer }, ...options }, { quoted })
         return buffer
     }
-	
+    
     /**
      * 
      * @param {*} message 
@@ -686,7 +686,7 @@ try{
         for await(const chunk of stream) {
             buffer = Buffer.concat([buffer, chunk])
         }
-	let type = await FileType.fromBuffer(buffer)
+    let type = await FileType.fromBuffer(buffer)
         trueFileName = attachExtension ? (filename + '.' + type.ext) : filename
         // save to file
         await fs.writeFileSync(trueFileName, buffer)
@@ -700,9 +700,9 @@ try{
         let buffer = Buffer.from([])
         for await(const chunk of stream) {
             buffer = Buffer.concat([buffer, chunk])
-	}
+    }
         
-	return buffer
+    return buffer
      } 
     
     /**
@@ -750,20 +750,20 @@ try{
      */
     conn.copyNForward = async (jid, message, forceForward = false, options = {}) => {
         let vtype
-		if (options.readViewOnce) {
-			message.message = message.message && message.message.ephemeralMessage && message.message.ephemeralMessage.message ? message.message.ephemeralMessage.message : (message.message || undefined)
-			vtype = Object.keys(message.message.viewOnceMessage.message)[0]
-			delete(message.message && message.message.ignore ? message.message.ignore : (message.message || undefined))
-			delete message.message.viewOnceMessage.message[vtype].viewOnce
-			message.message = {
-				...message.message.viewOnceMessage.message
-			}
-		}
+        if (options.readViewOnce) {
+            message.message = message.message && message.message.ephemeralMessage && message.message.ephemeralMessage.message ? message.message.ephemeralMessage.message : (message.message || undefined)
+            vtype = Object.keys(message.message.viewOnceMessage.message)[0]
+            delete(message.message && message.message.ignore ? message.message.ignore : (message.message || undefined))
+            delete message.message.viewOnceMessage.message[vtype].viewOnce
+            message.message = {
+                ...message.message.viewOnceMessage.message
+            }
+        }
 
         let mtype = Object.keys(message.message)[0]
         let content = await generateForwardMessageContent(message, forceForward)
         let ctype = Object.keys(content)[0]
-		let context = {}
+        let context = {}
         if (mtype != "conversation") context = message.message[mtype].contextInfo
         content[ctype].contextInfo = {
             ...context,
@@ -785,26 +785,26 @@ try{
 
     conn.cMod = (jid, copy, text = '', sender = conn.user.id, options = {}) => {
         //let copy = message.toJSON()
-		let mtype = Object.keys(copy.message)[0]
-		let isEphemeral = mtype === 'ephemeralMessage'
+        let mtype = Object.keys(copy.message)[0]
+        let isEphemeral = mtype === 'ephemeralMessage'
         if (isEphemeral) {
             mtype = Object.keys(copy.message.ephemeralMessage.message)[0]
         }
         let msg = isEphemeral ? copy.message.ephemeralMessage.message : copy.message
-		let content = msg[mtype]
+        let content = msg[mtype]
         if (typeof content === 'string') msg[mtype] = text || content
-		else if (content.caption) content.caption = text || content.caption
-		else if (content.text) content.text = text || content.text
-		if (typeof content !== 'string') msg[mtype] = {
-			...content,
-			...options
+        else if (content.caption) content.caption = text || content.caption
+        else if (content.text) content.text = text || content.text
+        if (typeof content !== 'string') msg[mtype] = {
+            ...content,
+            ...options
         }
         if (copy.key.participant) sender = copy.key.participant = sender || copy.key.participant
-		else if (copy.key.participant) sender = copy.key.participant = sender || copy.key.participant
-		if (copy.key.remoteJid.includes('@s.whatsapp.net')) sender = sender || copy.key.remoteJid
-		else if (copy.key.remoteJid.includes('@broadcast')) sender = sender || copy.key.remoteJid
-		copy.key.remoteJid = jid
-		copy.key.fromMe = sender === conn.user.id
+        else if (copy.key.participant) sender = copy.key.participant = sender || copy.key.participant
+        if (copy.key.remoteJid.includes('@s.whatsapp.net')) sender = sender || copy.key.remoteJid
+        else if (copy.key.remoteJid.includes('@broadcast')) sender = sender || copy.key.remoteJid
+        copy.key.remoteJid = jid
+        copy.key.fromMe = sender === conn.user.id
 
         return proto.WebMessageInfo.fromObject(copy)
     }
@@ -828,7 +828,7 @@ try{
         return {
             res,
             filename,
-	    size: await getSizeMedia(data),
+        size: await getSizeMedia(data),
             ...type,
             data
         }
@@ -842,8 +842,8 @@ startAdrian()
 
 let file = require.resolve(__filename)
 fs.watchFile(file, () => {
-	fs.unwatchFile(file)
-	console.log(chalk.redBright(`Update ${__filename}`))
-	delete require.cache[file]
-	require(file)
+    fs.unwatchFile(file)
+    console.log(chalk.redBright(`Update ${__filename}`))
+    delete require.cache[file]
+    require(file)
 })
